@@ -18,5 +18,8 @@ var Greet4 = require('./greet4');
 var grtr = new Greet4();
 grtr.greet(); // Hello World!!!
 
+// Revealing Module Pattern
 var greet5 = require('./greet5').greet;
 greet5();
+// we cannot change the variable
+// as only the function was exported
