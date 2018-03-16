@@ -1,3 +1,5 @@
+// Simple custom event emitter
+
 function Emitter() {
   this.event = {};
 }
