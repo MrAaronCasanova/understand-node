@@ -94,7 +94,7 @@ var Greetr2 = require('./greetr2');
 var greeter2 = new Greetr2(); // creates new object from Greetr constructor
 
 greeter2.on('greet', function(name) {
-  // greeter1 has access to .on
+  // greeter2 has access to .on
   // via its reference to the EventEmitter's prototype
 
   console.log('Someone greeted ' + name);
