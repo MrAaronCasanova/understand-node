@@ -80,7 +80,8 @@ var readableString = fs.createReadStream(__dirname + '/greet.txt', {
 
 var writable = fs.createWriteStream(__dirname + '/greetcopy.txt');
 
-module.exports = readableString.on('data', function(chunk) {
+// The stream starts just by listening to the data event
+readableString.on('data', function(chunk) {
   console.log(chunk); // chunk of utf8 encoded string
   console.log(chunk.length + ' based on highWaterMark'); //1024max
   console.log('****************************');
