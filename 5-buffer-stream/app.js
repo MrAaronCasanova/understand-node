@@ -2,7 +2,8 @@ console.log('-------------------------');
 
 // Buffer Basics
 
-var buf = new Buffer('Casanova', 'utf8'); // 8bit encoding (states each character should be encoded in bytes)
+var buf = new Buffer('Casanova', 'utf8'); //convert to binary data
+// utf8 - 8bit encoding (states each character should be encoded in bytes)
 
 console.log(buf); // <Buffer 43 61 73 61 6e 6f 76 61>
 // outputs binary data (in hexadecimal notation)
@@ -53,6 +54,8 @@ console.log('-------------------------');
 console.log('-------------------------');
 
 // core node file system module
+// lets us deal with files on the operating system
+// files on OS are usually in binary
 var fs = require('fs');
 
 // createReadStream returns on object
@@ -79,7 +82,7 @@ var writable = fs.createWriteStream(__dirname + '/greetcopy.txt');
 
 module.exports = readableString.on('data', function(chunk) {
   console.log(chunk); // chunk of utf8 encoded string
-  console.log(chunk.length + 'based on highWaterMark');
+  console.log(chunk.length + ' based on highWaterMark'); //1024max
   console.log('****************************');
-  writable.write(chunk);
+  writable.write(chunk); // writes greet.txt to greetcopy.txt
 });
