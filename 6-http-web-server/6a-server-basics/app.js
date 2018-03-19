@@ -9,9 +9,7 @@ http
     // building the head of the http response
     // first param is the status
     // second param is the headers (name value pairs)
-    res.writeHead(200, {
-      'Content-Type': 'text-plain'
-    });
+    res.writeHead(200, { 'Content-Type': 'text-plain' });
     // there is a .send method, but .end indicates it the last thing we are sending
     res.end('Hello World\n'); // \n stand for carriage return (good practice for ending data)
   })
