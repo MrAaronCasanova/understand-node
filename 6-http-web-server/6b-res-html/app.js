@@ -2,7 +2,7 @@ var http = require('http');
 var fs = require('fs');
 
 http
-  .createServer(function(req, res) {
+  .createServer(function (req, res) {
     // reads/stores index.htm off file system - returns buffer by default
     // specify utf8 to decode binary stream to a string of HTML instead of a buffer
     var html = fs.readFileSync(__dirname + '/index.htm', 'utf8');
