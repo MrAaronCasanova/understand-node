@@ -14,13 +14,17 @@ app.use('/api', function(req, res, next) {
 // vvv (standard) for serving you public/static files
 app.use(express.static(__dirname + '/public'));
 
+app.set('view engine', 'ejs');
+
 app.get('/', function(req, res) {
-  res.render(index.html);
+  res.render('index');
 });
 
 // utilizing route params/variable (:arbitrary-string)
 app.get('/person/:name', function(req, res) {
-  res.send('Hello ' + req.params.name); // route params can be accessed through req.params
+  res.render('person', {
+    NAME: req.params.name
+  }); // route params can be accessed through req.params
 });
 
 app.get('/api', function(req, res) {
