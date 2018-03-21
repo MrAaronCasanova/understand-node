@@ -12,8 +12,33 @@
 <body>
   <h1>Hello World</h1>
   <div>
-    <a href="/person/Aaron">Aaron</a>
+    <a href="/person/Aaron?qstr=lemons">Aaron</a>
   </div>
+
+  <div>
+    <form action="/person" method="POST">
+      Firstname:
+      <input type="text" id="firstname" name="firstname">
+      <br> Lastname:
+      <input type="text" id="lastname" name="lastname">
+      <br>
+      <button>Submit</button>
+    </form>
+  </div>
+  <script>
+    // post occurs on load and out puts to node console
+    // demonstration of parsing json with bodyParser
+    fetch('/personjson', {
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        firstname: 'Aaron',
+        lastname: 'Casanova'
+      })
+    })
+  </script>
 </body>
 
 </html>
